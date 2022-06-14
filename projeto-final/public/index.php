@@ -2,6 +2,9 @@
 
 include '../vendor/autoload.php';
 
+
+/*
+
 use App\Controller\IndexController;
 use App\Controller\ProductController;
 use App\Controller\ErrorController;
@@ -30,3 +33,4 @@ $controllerName = $routes[$url]['controller'];
 $methodName = $routes[$url]['method'];
 
 (new $controllerName())->$methodName();
+*/

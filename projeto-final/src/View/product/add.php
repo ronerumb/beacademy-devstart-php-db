@@ -1,4 +1,6 @@
+<div class="container">
 <h1>Cadastrar Produto</h1>
+
 
 <form action="" method="post">
 
@@ -10,7 +12,8 @@
     <input type="text" id="name" name="name" class="form-control mb-3">
 
     <label for="category">Categoria</label>
-    <select name="category" id="category" class="form-select mb-3">
+    <br>
+    <select name="category" id="category" class="form-select mb-3 w-100" >
         <option selected>Selecione</option>
         <?php
             while ($category = $data->fetch(\PDO::FETCH_ASSOC)){ ?>                
@@ -34,3 +37,5 @@
 
     <button class="btn btn-primary">Enviar</button>
 </form>
+
+</div>

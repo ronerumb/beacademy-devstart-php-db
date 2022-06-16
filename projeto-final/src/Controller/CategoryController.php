@@ -10,18 +10,16 @@ use App\Connection\Connection;
 
 class CategoryController extends AbstractController{
 
-    public function listAction():void {
+    public function listAction($message = null):void {
 
         $con = Connection::getConnection();
 
         $result = $con->prepare('SELECT * FROM tb_category');
-        $result->execute();
+        $result->execute();        
 
         
 
-        
-
-        parent::render('category/list',$result);
+        parent::render('category/list',$result,null,$message);
     }
 
     public function addAction() :void{
@@ -37,7 +35,10 @@ class CategoryController extends AbstractController{
             $result = $con->prepare($query);
             $result->execute();
 
-            echo 'Categoria cadastrada com sucesso';
+            $message = 'Categoria adicionada com sucesso';
+            
+            (new CategoryController())->listAction($message);
+            die();
         }
 
         parent::render('category/add');
@@ -52,7 +53,10 @@ class CategoryController extends AbstractController{
         $result = $con->prepare($query);
         $result->execute();
 
-        echo 'Categoria Excluida com sucesso';
+       
+        $message = 'Categoria excluida com sucesso';
+        (new CategoryController())->listAction($message);
+        die();
 
     }
 
@@ -70,7 +74,10 @@ class CategoryController extends AbstractController{
             $result = $con->prepare($queryUpdate);
             $result->execute();
 
-            echo 'Categoria atualizada com sucesso';
+            
+            $message = 'Categoria atualizada com sucesso';
+            (new CategoryController())->listAction($message);
+            die();
         }
 
         $query = "SELECT * FROM tb_category WHERE id='{$id}'";

@@ -12,7 +12,7 @@ $selected = '';
     <input value="<?php echo $product['name']; ?>" type="text" id="name" name="name" class="form-control mb-3">
 
     <label for="category">Categoria</label>
-    <select name="category" id="category" class="form-select mb-3">
+    <select name="category" id="category" class="form-select mb-3 w-100">
         <option>Selecione</option>
         <?php
             while ($category = $categories->fetch(\PDO::FETCH_ASSOC)){

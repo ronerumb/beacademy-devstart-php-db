@@ -2,6 +2,9 @@
 
 <h1>Listar Produtos</h1>
 
+
+<a class="btn btn-primary mb-3 " href="/produtos/novo" role="button">Novo Produto</a>
+
 <table class="table table-hover table-striped">
     <thead class="table-dark">
         <tr>

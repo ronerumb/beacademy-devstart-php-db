@@ -10,15 +10,18 @@ use App\Connection\Connection;
 class ProductController extends AbstractController
 {
 
-    public function listAction(): void
+    public function listAction($message = null): void
     {
 
+        
+        
         $con = Connection::getConnection();
 
         $result = $con->prepare('SELECT * FROM tb_product');
         $result->execute();
+       
 
-        parent::render('product/list', $result);
+        parent::render('product/list', $result,null,$message);
     }
 
     public function addAction(): void
@@ -40,7 +43,9 @@ class ProductController extends AbstractController
             $result = $con->prepare($query);
             $result->execute();
 
-            echo 'Produto cadastrado com sucesso';
+            $message = 'Produto cadastrado com sucesso';
+            (new ProductController())->listAction($message);
+            die();
         }
 
         $result = $con->prepare('SELECT * FROM tb_category');
@@ -58,7 +63,9 @@ class ProductController extends AbstractController
         $result = $con->prepare("DELETE FROM tb_product WHERE id='{$id}'");
         $result->execute();
 
-        echo "Produto excluido com sucesso";
+        $message = 'Produto Removido com sucesso';
+        (new ProductController())->listAction($message);
+        die();
     }
 
 
@@ -83,8 +90,10 @@ class ProductController extends AbstractController
             WHERE id='{$id}'";            
             $resultUpdate = $con->prepare($query);
             $resultUpdate->execute();
-
-            echo 'Produto atualizado';
+            $message = 'Produto atualizado com sucesso';
+            (new ProductController())->listAction($message);
+            die();
+            
         }
 
         $categories = $con->prepare('SELECT * FROM tb_category');

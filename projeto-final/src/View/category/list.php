@@ -2,6 +2,8 @@
 
 <h1>Listar Categorias</h1>
 
+<a class="btn btn-primary mb-3 " href="/categorias/nova" role="button">Nova Categoria</a>
+
 <table class="table table-hover table-striped">
     <thead class="table-dark">
         <tr>

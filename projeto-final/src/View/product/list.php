@@ -29,8 +29,8 @@
                    <td><?php echo $product['value'] ?></td>
                    <td><?php echo $product['quantity'] ?></td>
                    <td> 
-                        <a href='/categorias/editar?id=<?php echo $product['id'] ?>' class='btn btn-primary btn-sm'>Editar</a>
-                        <a href='/categorias/excluir?id=<?php echo $product['id'] ?>' class='btn btn-secondary btn-sm'>Excluir</a>
+                        <a href='/produtos/editar?id=<?php echo $product['id'] ?>' class='btn btn-primary btn-sm'>Editar</a>
+                        <a href='/produtos/excluir?id=<?php echo $product['id'] ?>' class='btn btn-secondary btn-sm'>Excluir</a>
                           </td>
                           
 

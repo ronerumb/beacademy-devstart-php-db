@@ -6,7 +6,7 @@ namespace App\Controller;
 
 abstract class AbstractController
 {
-    public function render(string $viewName,  $data = null):void
+    public function render(string $viewName,  $data = null,$categories = null):void
     {
         include dirname(__DIR__)."/View/_partials/head.php";
         include dirname(__DIR__)."/View/{$viewName}.php";

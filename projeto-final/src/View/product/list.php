@@ -5,6 +5,8 @@
 
 <a class="btn btn-primary mb-3 " href="/produtos/novo" role="button">Novo Produto</a>
 
+<a class="btn btn-secondary mb-3 " href="/produtos/relatorio" role="button">Relatorio PDF</a>
+
 <table class="table table-hover table-striped">
     <thead class="table-dark">
         <tr>
